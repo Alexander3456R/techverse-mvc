@@ -1,0 +1,26 @@
+# Dependencias externas
+/vendor/
+node_modules/
+
+# Archivos de entorno (seguridad)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+
+# Configuración personal del editor
+.vscode/
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Logs y caché
+*.log
+*.cache
+
+# Carpetas generadas automáticamente (si usas Gulp para compilar)
+# Puedes ignorar la carpeta donde generas el CSS final y el JS minificado
+/dist/
