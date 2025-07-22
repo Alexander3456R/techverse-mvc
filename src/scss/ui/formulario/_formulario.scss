@@ -72,6 +72,12 @@
         }
     }
 
+    &__radio {
+        display: flex;
+        gap: 2rem;
+        
+    }
+
     &__listado {
         @include m.tags;
     }
