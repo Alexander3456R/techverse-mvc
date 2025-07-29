@@ -21,5 +21,23 @@
             color: v.$blanco;
             transition: 400ms background-color ease-in-out, 400ms color ease, 400ms border-radius ease;
         }
+
+        &--seleccionada {
+            @extend .horas__hora;
+            background-color: v.$azul;
+            color: v.$blanco;
+        }
+
+        &--deshabilitado {
+            @extend .horas__hora;
+            border: 1px solid v.$gris;
+            color: v.$gris;
+            opacity: .5;
+            &:hover {
+                background-color: v.$blanco;
+                color: v.$gris;
+                cursor: not-allowed;
+            }
+        }
     }
 }
