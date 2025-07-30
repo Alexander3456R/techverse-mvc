@@ -8,7 +8,7 @@
         <div class="header__contenedor">
             <a href="/">
                 <h1 class="header__logo">
-                    &#60;DevWebCamp />
+                    &#60;TechVerse />
                 </h1>
             </a>
             <p class="header__texto">Diciembre 18-19 - 2025</p>
@@ -23,7 +23,7 @@
     <div class="barra__contenido">
         <a href="/">
             <h2 class="barra__logo">
-                &#60;DevWebCamp />
+                &#60;TechVerse />
             </h2>
         </a>
         <nav class="navegacion">

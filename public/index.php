@@ -9,6 +9,7 @@ use Controllers\AuthController;
 use Controllers\DashboardController;
 use Controllers\EventosController;
 use Controllers\ExpositoresController;
+use Controllers\PaginasController;
 use Controllers\RegalosController;
 use Controllers\RegistradosController;
 
@@ -36,6 +37,7 @@ $router->post('/reestablecer', [AuthController::class, 'reestablecer']);
 $router->get('/mensaje', [AuthController::class, 'mensaje']);
 $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 
+
 // Area de administracion
 $router->get('/admin/dashboard', [DashboardController::class, 'index']);
 
@@ -61,5 +63,11 @@ $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 $router->get('/admin/regalos', [RegalosController::class, 'index']);
 
+
+// Area publica
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/devwebcamp', [PaginasController::class, 'evento']);
+$router->get('/paquetes', [PaginasController::class, 'paquetes']);
+$router->get('/workshops-conferencias', [PaginasController::class, 'conferencias']);
 
 $router->comprobarRutas();

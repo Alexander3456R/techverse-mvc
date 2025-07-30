@@ -2,7 +2,7 @@
     <div class="dashboard__header-grid">
         <a href="/">
             <h2 class="dashboard__logo">
-                &#60;DevWebCamp />
+                &#60;TechVerse />
             </h2>
         </a>
         <nav class="dashboard__nav">

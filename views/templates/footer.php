@@ -2,11 +2,11 @@
     <div class="footer__grid">
         <div class="footer__contenido">
             <h3 class="footer__logo">
-                &#60;DevWebCamp />
+                &#60;TechVerse />
             </h3>
 
             <p class="footer__texto">
-                DevWebCamp es una conferencia para desarrolladores de todos los niveles, se lleva a cabo tanto de forma presencial como en linea.
+                TechVerse es una conferencia para desarrolladores de todos los niveles, se lleva a cabo tanto de forma presencial como en linea.
             </p>
         </div>
 
@@ -33,7 +33,7 @@
     </div>
 
     <p class="footer__copyright">
-        DevWebCamp - CARU
+        TechVerse - Christopher Revelo
         <span class="footer__copyright--regular">
             - Todos los derechos reservados <?php echo date('Y'); ?>
         </span>

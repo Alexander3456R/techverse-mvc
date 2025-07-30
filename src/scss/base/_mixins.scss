@@ -82,6 +82,14 @@
     text-align: center;
 }
 
+@mixin descripcion-pagina {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: v.$delgada;
+    color: v.$gris-oscuro;
+    margin-bottom: 5rem;
+}
+
 @mixin texto-fluido($min, $max) {
     font-size: clamp($min, -0.8rem + 10vw, $max);
 }
@@ -184,5 +192,15 @@
             background-color: darken(v.$azul, 15%);
             transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
         }
+    }
+}
+
+@mixin card {
+    border: 1px solid lighten(v.$gris, 10%);
+    padding: 3rem;
+    &__nombre {
+        font-weight: v.$black;
+        font-size: 2.6rem;
+        margin: 2rem 0;
     }
 }
