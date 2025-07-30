@@ -14,4 +14,8 @@
 
 .paquete {
     @include m.card;
+    
+    &__lista {
+        @include m.reset-lista;
+    }
 }
