@@ -1047,4 +1047,30 @@ h3 {
     display: inline;
   }
 }
+
+.listado-expositores {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-expositores__expositor, .listado-expositores__expositor--seleccionado {
+  color: #007df4;
+  border: 1px solid #007df4;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.listado-expositores__expositor:hover, .listado-expositores__expositor--seleccionado:hover {
+  cursor: pointer;
+  background-color: #007df4;
+  color: #FFFFFF;
+  transition: 300ms background-color ease-in-out, 300ms color ease, 300ms border-radius ease;
+}
+.listado-expositores__expositor--seleccionado {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
 /*# sourceMappingURL=app.css.map */

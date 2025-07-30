@@ -3,7 +3,7 @@
 namespace Controllers;
 use Model\EventoHorario;
 
-class ApiEventos {
+class APIEventos {
 
     public static function index() {
 

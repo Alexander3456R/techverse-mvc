@@ -167,12 +167,11 @@ class ExpositoresController {
     }
 
     public static function eliminar() {
-
+         if($_SERVER['REQUEST_METHOD'] === 'POST') {
+            
             if(!is_admin()) {
                 header('Location: /login');
             }
-
-         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $id = $_POST['id'];
             $expositor = Expositor::find($id);
