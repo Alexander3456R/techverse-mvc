@@ -415,6 +415,14 @@ h3 {
   margin: 0;
   padding: 0;
   list-style: none;
+  line-height: 2;
+}
+.paquete__precio {
+  font-size: 6rem;
+  margin: 3rem 0 0 0;
+  color: #007df4;
+  font-weight: 900;
+  text-align: center;
 }
 
 .formulario {

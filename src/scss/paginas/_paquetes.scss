@@ -17,5 +17,13 @@
     
     &__lista {
         @include m.reset-lista;
+        line-height: 2;
+    }
+    &__precio {
+        font-size: 6rem;
+        margin: 3rem 0 0 0;
+        color: v.$azul;
+        font-weight: v.$black;
+        text-align: center;
     }
 }
