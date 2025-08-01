@@ -8,12 +8,20 @@
         @include m.grid(1, 3rem);
         @include m.tablet {
             @include m.grid(3, 3rem);
+            align-items: flex-start;
         }
     }
 }
 
 .paquete {
     @include m.card;
+    &:nth-child(2n) {
+        order: -1;
+        @include m.tablet {
+            order: unset;
+        }
+    }
+
     
     &__lista {
         @include m.reset-lista;
