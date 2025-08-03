@@ -1,9 +1,8 @@
-<main class="paquetes">
-    <h2 class="paquetes__heading"><?php echo $titulo; ?></h2>
-    <p class="paquetes__descripcion">Compara los paquetes de TechVerse</p>
+<main class="registro">
+    <h2 class="registro__heading"><?php echo $titulo; ?></h2>
+    <p class="registro__descripcion">Elige tu plan</p>
 
-
-    <div <?php echo aos_animation(); ?> class="paquetes__grid">
+     <div <?php echo aos_animation(); ?> class="paquetes__grid">
         <div class="paquete">
             <h3 class="paquete__nombre">Pase Gratuito</h3>
             <ul class="paquete__lista">
@@ -11,6 +10,10 @@
             </ul>
 
             <p class="paquete__precio">$0</p>
+
+            <form method="POST" action="/finalizar-registro/gratis">
+                <input class="paquetes__submit" type="submit" value="Inscripción Gratis">
+            </form>
         </div>
 
 
