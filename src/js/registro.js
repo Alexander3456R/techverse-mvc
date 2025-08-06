@@ -107,7 +107,7 @@ import Swal from "sweetalert2";
             const resultado = await respuesta.json();
             if(resultado.resultado) {
                 Swal.fire({
-                    title: 'Registro Exitoso'
+                    title: 'Registro Exitoso',
                     text: 'Tus conferencias se han almacenado y tu registro fue exitoso, te esperamos en TechVerse',
                     icon: 'success',
                     confirmButtonText: 'OK'

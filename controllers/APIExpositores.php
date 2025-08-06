@@ -6,6 +6,12 @@ use Model\Expositor;
 class APIExpositores {
 
     public static function index() {
+
+        if(!is_admin()) {
+            echo json_encode([]);
+            return;
+        }
+        
         $expositores = Expositor::all();
         echo json_encode($expositores);
 

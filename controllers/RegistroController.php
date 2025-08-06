@@ -19,16 +19,19 @@ class RegistroController {
 
         if(!is_auth()) {
             header('Location: /');
+            exit;
         }
 
         // Verificar si el usuario ya esta registrado
         $registro = Registro::where('usuario_id', $_SESSION['id']);
-        if(isset($registro) && $registro->paquete_id === '3') {
+        if(isset($registro) && ($registro->paquete_id === '3' || $registro->paquete_id === '2')) {
             header('Location: /boleto?id=' . urlencode($registro->token));
+            exit;
         }
 
-        if($registro->paquete_id === '1') {
+        if(isset($registro) && $registro->paquete_id === '1') {
             header('Location: /finalizar-registro/conferencias');
+            exit;
         }
 
         $router->render('registro/crear', [
@@ -40,12 +43,14 @@ class RegistroController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             if(!is_auth()) {
                 header('Location: /login');
+                exit;
             }
 
             // Verificar si el usuario ya esta registrado
             $registro = Registro::where('usuario_id', $_SESSION['id']);
             if(isset($registro) && $registro->paquete_id === '3') {
                 header('Location: /boleto?id=' . urlencode($registro->token));
+                exit;
             }
 
             $token = substr(md5(uniqid( rand(), true )), 0, 8);
@@ -63,6 +68,7 @@ class RegistroController {
 
             if($resultado) {
                 header('Location: /boleto?id=' . urlencode($registro->token));
+                exit;
             }
         }
     }
@@ -73,12 +79,14 @@ class RegistroController {
         $id = $_GET['id'];
         if(!$id || !strlen($id) === 8) {
             header('Location: /');
+            exit;
         }
 
         // Buscarlo en la base de datos
         $registro = Registro::where('token', $id);
         if(!$registro) {
             header('Location: /');
+            exit;
         }
 
         // Llenar las tablas de refencia
@@ -97,6 +105,7 @@ class RegistroController {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             if(!is_auth()) {
                 header('Location: /login');
+                exit;
             }
 
             // Validar que post no venga vacio
@@ -140,6 +149,11 @@ class RegistroController {
         $usuario_id = $_SESSION['id'];
         $registro = Registro::where('usuario_id', $usuario_id);
 
+        if(isset($registro) && $registro->paquete_id === '2') {
+            header('Location: /boleto?id=' . urlencode($registro->token));
+            exit;
+        }
+
         if($registro->paquete_id !== '1') {
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo json_encode(['resultado' => false, 'error' => 'paquete']);
@@ -150,7 +164,7 @@ class RegistroController {
         }
 
         // Redireccionar a boleto virtual en caso de haber finalizdo su registro
-        if(isset($registro->regalo_id)) {
+        if(isset($registro->regalo_id) && $registro->paquete_id === '1') {
             header('Location: /boleto?id=' . urlencode($registro->token));
             exit;
         }

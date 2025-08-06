@@ -4,6 +4,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\ApiEventos;
 use Controllers\APIExpositores;
+use Controllers\APIRegalos;
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
@@ -40,29 +41,26 @@ $router->get('/confirmar-cuenta', [AuthController::class, 'confirmar']);
 
 
 // Area de administracion
-$router->get('/admin/dashboard', [DashboardController::class, 'index']);
+$router->get('/admin/dashboard', [DashboardController::class, 'index']); //Protegida
+$router->get('/admin/expositores', [ExpositoresController::class, 'index']); // Protegida
+$router->get('/admin/expositores/crear', [ExpositoresController::class, 'crear']); // Protegida
+$router->post('/admin/expositores/crear', [ExpositoresController::class, 'crear']); // Protegida
+$router->get('/admin/expositores/editar', [ExpositoresController::class, 'editar']); // Protegida
+$router->post('/admin/expositores/editar', [ExpositoresController::class, 'editar']); // Protegida
+$router->post('/admin/expositores/eliminar', [ExpositoresController::class, 'eliminar']); // Protegida
+$router->get('/admin/eventos', [EventosController::class, 'index']); // Protegida
+$router->get('/admin/eventos/crear', [EventosController::class, 'crear']); // Protegida
+$router->post('/admin/eventos/crear', [EventosController::class, 'crear']); // Protegida
+$router->get('/admin/eventos/editar', [EventosController::class, 'editar']); // Protegida
+$router->post('/admin/eventos/editar', [EventosController::class, 'editar']);// Protegida
+$router->post('/admin/eventos/eliminar', [EventosController::class, 'eliminar']);// Protegida
+$router->get('/api/eventos-horarios', [APIEventos::class, 'index']); // Protegida
+$router->get('/api/expositores', [APIExpositores::class, 'index']); // Protegida
+$router->get('/api/expositor', [APIExpositores::class, 'expositor']); // Protegida
+$router->get('/api/regalos', [APIRegalos::class, 'index']); // Protegida
+$router->get('/admin/registrados', [RegistradosController::class, 'index']); // Protegida
+$router->get('/admin/regalos', [RegalosController::class, 'index']); // Protegida
 
-$router->get('/admin/expositores', [ExpositoresController::class, 'index']);
-$router->get('/admin/expositores/crear', [ExpositoresController::class, 'crear']);
-$router->post('/admin/expositores/crear', [ExpositoresController::class, 'crear']);
-$router->get('/admin/expositores/editar', [ExpositoresController::class, 'editar']);
-$router->post('/admin/expositores/editar', [ExpositoresController::class, 'editar']);
-$router->post('/admin/expositores/eliminar', [ExpositoresController::class, 'eliminar']);
-
-$router->get('/admin/eventos', [EventosController::class, 'index']);
-$router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
-$router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
-$router->get('/admin/eventos/editar', [EventosController::class, 'editar']);
-$router->post('/admin/eventos/editar', [EventosController::class, 'editar']);
-$router->post('/admin/eventos/eliminar', [EventosController::class, 'eliminar']);
-
-$router->get('/api/eventos-horarios', [APIEventos::class, 'index']);
-$router->get('/api/expositores', [APIExpositores::class, 'index']);
-$router->get('/api/expositor', [APIExpositores::class, 'expositor']);
-
-$router->get('/admin/registrados', [RegistradosController::class, 'index']);
-
-$router->get('/admin/regalos', [RegalosController::class, 'index']);
 
 // Registro de usuarios
 $router->get('/finalizar-registro', [RegistroController::class, 'crear']);

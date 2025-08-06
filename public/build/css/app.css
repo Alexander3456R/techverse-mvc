@@ -1497,6 +1497,10 @@ h3 {
   width: min(95%, 80rem);
   margin: 0 auto;
 }
+.dashboard__grafica {
+  width: min(95%, 60rem);
+  margin: 0 auto;
+}
 
 .table-wrapper {
   overflow-x: auto;
@@ -1619,6 +1623,59 @@ h3 {
 .listado-expositores__expositor--seleccionado {
   background-color: #007df4;
   color: #FFFFFF;
+}
+
+.bloques {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .bloques {
+    margin-top: 10rem;
+  }
+}
+.bloques__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 1024px) {
+  .bloques__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bloque {
+  padding: 3rem;
+  color: #FFFFFF;
+  border-radius: 1rem;
+}
+.bloque:nth-child(1) {
+  background-image: linear-gradient(to left top, #F97316, rgb(250.9205020921, 159.8117154812, 96.5794979079));
+}
+.bloque:nth-child(2) {
+  background-image: linear-gradient(to left top, #A855f7, rgb(205.3904494382, 158.0617977528, 250.4382022472));
+}
+.bloque:nth-child(3) {
+  background-image: linear-gradient(to left top, #59910b, rgb(132.6442307692, 216.1057692308, 16.3942307692));
+}
+.bloque:nth-child(4) {
+  background-image: linear-gradient(to left top, #17769E, rgb(34.5856353591, 167.1132596685, 222.9143646409));
+}
+.bloque__heading {
+  margin: 1rem 0 2rem 0;
+  font-size: 3.6rem;
+}
+.bloque__texto {
+  margin: 1rem 0;
+}
+.bloque__texto--cantidad {
+  margin-top: 5rem;
+  font-weight: 900;
+  font-size: 6rem;
+  text-align: center;
 }
 
 .eventos-registro {
