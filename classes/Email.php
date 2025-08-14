@@ -28,7 +28,7 @@ class Email {
          $mail->Username = $_ENV['EMAIL_USER'];
          $mail->Password = $_ENV['EMAIL_PASS'];
      
-         $mail->setFrom('cuentas@devwebcamp.com');
+         $mail->setFrom('morochito344@gmail.com', 'TechVerse');
          $mail->addAddress($this->email, $this->nombre);
          $mail->Subject = 'Confirma tu Cuenta';
 
@@ -59,7 +59,7 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
     
-        $mail->setFrom('cuentas@devwebcamp.com');
+        $mail->setFrom('morochito344@gmail.com', 'TechVerse');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Reestablece tu password';
 

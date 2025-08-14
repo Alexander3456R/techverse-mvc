@@ -99,7 +99,7 @@ import Swal from "sweetalert2";
             datos.append('eventos', eventosId);
             datos.append('regalo_id', regaloId);
 
-            const url = '/finalizar-registro/conferencias'
+            const url = `${location.origin}/finalizar-registro/conferencias`
             const respuesta = await fetch(url, {
                 method: 'POST',
                 body: datos

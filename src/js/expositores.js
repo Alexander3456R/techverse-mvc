@@ -24,7 +24,7 @@
         }
         
         async function obtenerExpositores() {
-            const url = `/api/expositores`;
+            const url = `${location.origin}/api/expositores`;
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
 
@@ -32,7 +32,7 @@
         }
 
         async function obtenerExpositor(id) {
-            const url = `/api/expositor?id=${id}`;
+            const url = `${location.origin}/api/expositor?id=${id}`;
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
             return resultado;
