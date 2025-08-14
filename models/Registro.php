@@ -12,7 +12,11 @@ class Registro extends ActiveRecord {
     public $usuario_id;
     public $regalo_id;
 
-        public function __construct($args = [])
+    // Propiedades relacionadas
+    public $usuario;
+    public $paquete;
+
+    public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
         $this->paquete_id = $args['paquete_id'] ?? '';
@@ -20,5 +24,9 @@ class Registro extends ActiveRecord {
         $this->token = $args['token'] ?? '';
         $this->usuario_id = $args['usuario_id'] ?? '';
         $this->regalo_id = $args['regalo_id'] ?? 1;
+
+        // Inicializar las propiedades relacionadas como null
+        $this->usuario = $args['usuario'] ?? null;
+        $this->paquete = $args['paquete'] ?? null;
     }
 }
