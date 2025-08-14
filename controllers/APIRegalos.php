@@ -16,9 +16,14 @@ class APIRegalos {
         
         $regalos = Regalo::all();
         foreach($regalos as $regalo) {
-            $regalo->total = Registro::totalArray(['regalo_id' => $regalo->id, 'paquete_id' => '1']);
+            // Ahora usamos la propiedad declarada $total
+            $regalo->total = Registro::totalArray([
+                'regalo_id' => $regalo->id, 
+                'paquete_id' => '1'
+            ]);
         }
 
+        // Retornamos los datos en JSON
         echo json_encode($regalos);
         return;
     }
